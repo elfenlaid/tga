@@ -187,7 +187,7 @@ Alas, while sounding like insanity, it's a surprisingly reoccurring theme. For e
 - `Gemfile` is analog to `Podfile`
 - `Gemfile.lock` is analog to `Podfile.lock`
 
-By the way, [CocoaPods](https://cocoapods.org/) themselves [use bundler](https://github.com/CocoaPods/CocoaPods/blob/master/Gemfile). And as you can see, bundler doesn't the hardest setup: process:
+By the way, [CocoaPods](https://cocoapods.org/) themselves [use bundler](https://github.com/CocoaPods/CocoaPods/blob/master/Gemfile). And as you can see, `bundler` doesn't take much to setup:
 
 1. Create a `Gemfile` (or use `bundle init`) and specify required dependencies. A typical iOS project `Gemfile`:
 
