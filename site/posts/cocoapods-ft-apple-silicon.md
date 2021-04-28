@@ -219,17 +219,13 @@ Don't forget to check in `Gemfile.lock` to the source control or pin the exact g
 3. Run commands with `bundle exec` prefix:
 
 ```bash
-
 $ bundle exec pod install
-
 ```
 
 You might add an alias `alias be="bundle exec"` to avoid typing `bundle exec` over and over again:
 
 ```bash
-
 $ be pod install
-
 ```
 
 Also, most of the shells have a dedicated `bundler` plugin with completions:
