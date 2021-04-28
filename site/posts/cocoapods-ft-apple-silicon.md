@@ -1,7 +1,7 @@
 ---
 date: 2021-04-14
 title: CocoaPods Setup ft. Apple Silicon
-description: Skimming over possible Ruby setups, gems, bundler, and common gotchas
+subtitle: Skimming over possible Ruby setups, gems, bundler, and common gotchas
 tags:
   - CocoaPods
   - iOS
