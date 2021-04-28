@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .prose img {
+    @apply rounded-md w-full shadow;
+  }
+
+  .table-of-contents {
+    @apply mt-8;
+  }
+
+  div.unprose * {
+    @apply m-0;
+  }
+}

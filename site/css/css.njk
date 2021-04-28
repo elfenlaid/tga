@@ -1,0 +1,10 @@
+---
+permalink: false
+---
+
+{%- set css %}
+{% include 'site/css/tailwind.css' %}
+{% include 'site/css/prism.css' %}
+{% endset %}
+
+{{ css | postCSS | cssmin | safe }}

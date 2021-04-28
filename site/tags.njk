@@ -1,0 +1,9 @@
+---
+layout: layouts/home.njk
+title: All Tags
+---
+
+<div>
+  {% set tagsList = collections.postTags %}
+  {% include "tags-list.njk" %}
+</div>

@@ -1,0 +1,27 @@
+---
+layout: "layouts/base.njk"
+---
+
+<main>
+  <h1 class="text-4xl font-bold dark:text-white">{{ title }}</h1>
+
+  <div class="my-2 flex flex-col space-y-6">
+    {%- if date %}
+      <div class="flex items-center space-x-2 text-gray-400 text-sm font-light">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span>{{ date | shortDate }}</span>
+      </div>
+    {% endif %}
+
+    {%- if tags %}
+      {% set tagsList = tags | postTags %}
+      {% include "tags-list.njk" %}
+    {% endif %}
+  </div>
+
+  <div class="mt-8 prose dark:prose-dark max-w-none">
+    {{ content | safe }}
+  </div>
+</main>

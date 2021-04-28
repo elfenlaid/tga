@@ -1,0 +1,10 @@
+<div class="flex flex-wrap">
+  {% for tag in tagsList %}
+    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    <a class="border-gray-300 hover:border-gray-500 rounded-full border mr-1 mb-1" href="{{ tagUrl | url }}">
+      <div class="px-2 py-1 flex items-center text-gray-400 hover:text-gray-500 text-sm font-light">
+        <span class="whitespace-pre">{{ tag }}</span>
+      </div>
+    </a>
+  {% endfor %}
+</div>

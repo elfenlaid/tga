@@ -1,0 +1,21 @@
+<header class="py-8 md:py-16">
+  <div class="flex flex-col space-y-4">
+    <div class="flex items-center md:space-x-8">
+      <img class="h-16 w-16 rounded-full ring-1 ring-gray-500 hidden md:block" src="/static/avatar.jpg" alt="Avatar Image"/>
+      <div class="flex flex-col">
+        <a class="text-3xl font-semibold" href="/">
+          <span class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-mono">t</span>he good, alright dev
+        </a>
+        <p class="text-gray-500 font-light mt-4 max-w-lg {% if 'posts' in page.url %} hidden md:block {% endif %}">
+          Hello 👋 I'm Egor, a failed entrepreneur, iOS developer, and Elixir enthusiast
+        </p>
+      </div>
+    </div>
+
+    <nav class="mt-4 space-x-4 md:ml-24">
+      {% for link in navigation.links %}
+        <a href="{{ link.url | url }}" class="{% if page.url == link.url %} text-gray-800 dark:text-white {% else %} text-gray-500 dark:text-gray-400 {% endif %};">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

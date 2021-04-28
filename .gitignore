@@ -1,0 +1,12 @@
+node_modules/
+_site/
+package-lock.json
+node-supporters/
+.env
+.log
+.cache
+yarn.lock
+yarn-error.log
+.vscode
+**/.DS_Store
+netlify/functions/cloud/*
