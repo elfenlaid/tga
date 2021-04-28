@@ -369,7 +369,7 @@ The quick fix is to launch Xcode under Rosetta (`arch -x86_64 xed .`) and notify
 
 iOS package management is living through its wild west. The advent of new architecture surely doesn't make things easier either. For now, I hope that you found the guide helpful.
 
-Despite all the rough edges, I can't thank the iOS community enough. [CocoaPods](https://cocoapods.org/) team deliver the best experience possible and even more. I only wish for Apple to stop pretending CocoaPods doesn't exist in the first place.
+Despite all the rough edges, I can't thank the iOS community enough. [CocoaPods](https://cocoapods.org/) team delivers the best experience possible and even more. I only wish for Apple to stop pretending CocoaPods doesn't exist in the first place.
 
 It's hard to make any calls but just imagine a graceful Swift Package Manager migration or proactively making CocoaPods support a new Xcode change. How cool would that be, huh? 🤔
 
