@@ -41,8 +41,8 @@ Just imagine for a second, no Ruby environment juggling, and you are ready to ro
 $ file /usr/bin/ruby
 
 /usr/bin/ruby: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]
-/usr/bin/ruby (for architecture x86_64):	Mach-O 64-bit executable x86_64
-/usr/bin/ruby (for architecture arm64e):	Mach-O 64-bit executable arm64e
+/usr/bin/ruby (for architecture x86_64): Mach-O 64-bit executable x86_64
+/usr/bin/ruby (for architecture arm64e): Mach-O 64-bit executable arm64e
 ```
 
 See that `file` output with 2 architectures? It means that the binary can run either natively or under Rosetta (`arch -x86_64 ruby`) emulation.
@@ -155,8 +155,8 @@ The main `rbenv`'s' drawback for `arm64` architecture is that some Ruby versions
 [Official documentation](https://asdf-vm.com/#/core-manage-asdf?id=install) is genuinely good. Alas, an installation process might turn a bit cryptic, especially considering [Common Homebrew issues 🍻 · Issue #785](https://github.com/asdf-vm/asdf/issues/785). I'm personally using the plain `git clone` method here (don't forget to subscribe to [asdf releases on GitHub](https://github.com/asdf-vm/asdf))
 
 [asdf Ruby plugin](https://github.com/asdf-vm/asdf-ruby) aside from managing Ruby environments, also can:
-  - Install [default gems](https://github.com/asdf-vm/asdf-ruby#default-gems) right after installing a Ruby versions. Presumably, you want `bundler`, `pry`, or gems of your choice to be available on each and every installed Ruby version.
-  - Help with [migrating from other Ruby version managers](https://github.com/asdf-vm/asdf-ruby#migrating-from-another-ruby-version-manager). Meaning it supports `.ruby-version` configuration file
+- Install [default gems](https://github.com/asdf-vm/asdf-ruby#default-gems) right after installing a Ruby versions. Presumably, you want `bundler`, `pry`, or gems of your choice to be available on each and every installed Ruby version.
+- Help with [migrating from other Ruby version managers](https://github.com/asdf-vm/asdf-ruby#migrating-from-another-ruby-version-manager). Meaning it supports `.ruby-version` configuration file
 
 [asdf](https://github.com/asdf-vm/asdf) seems to go well along M1 and builds most Ruby versions just fine. Alas, [there are nuances](https://github.com/asdf-vm/asdf-ruby/issues/210)
 

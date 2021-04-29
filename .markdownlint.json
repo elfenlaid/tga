@@ -2,5 +2,6 @@
   "line-length": false,
   "no-inline-html": false,
   "ol-prefix": false,
-  "commands-show-output": false
+  "commands-show-output": false,
+  "blanks-around-lists": false
 }
