@@ -22,7 +22,8 @@
     "url": "https://thegoodalright.dev/feed/feed.json"
   },
   "iosfeed": {
-    "path": "/feed/ios.json",
-    "url": "https://thegoodalright.dev/feed/ios.json"
+    "filename": "ios.xml",
+    "path": "/feed/ios.xml",
+    "id": "https://thegoodalright.dev/feed/ios.xml"
   }
 }

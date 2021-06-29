@@ -16,6 +16,6 @@ To subscribe to all {{ metadata.social.title }} articles via RSS, add the follow
 Or if only want an iOS related posts:
 
 ```bash
-# JSONFeed
+# Atom
 {{ metadata.iosfeed.path | url | absoluteUrl(metadata.url)}}
 ```
