@@ -1,7 +1,12 @@
 <header class="py-8 md:py-16">
   <div class="flex flex-col space-y-4">
     <div class="flex items-center md:space-x-8">
-      <img class="h-16 w-16 rounded-full ring-1 ring-gray-500 hidden md:block" src="/static/avatar.jpg" alt="Avatar Image"/>
+      <picture>
+        <source type="image/webp" srcset="/static/avatar-64.webp 64w, /static/avatar-128.webp 128w, /static/avatar-192.webp 192w" sizes="64w">
+        <source type="image/jpeg" srcset="/static/avatar-64.jpeg 64w, /static/avatar-128.jpeg 128w, /static/avatar-192.jpeg 192w" sizes="128w">
+        <source type="image/avif" srcset="/static/avatar-64.avif 64w, /static/avatar-128.avif 128w, /static/avatar-192.avif 192w" sizes="192w">
+        <img class="h-16 w-16 rounded-full ring-1 ring-gray-500 hidden md:block" alt="avatar" loading="lazy" decoding="async" src="/static/avatar-64.jpeg" width="192" height="192">
+      </picture>
       <div class="flex flex-col">
         <a class="text-3xl font-semibold" href="/">
           <span class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-mono">t</span>he good, alright dev
