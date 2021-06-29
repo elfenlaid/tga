@@ -3,7 +3,7 @@ layout: layouts/home.njk
 title: About
 ---
 
-<div class="max-w-lg dark:text-gray-400 space-y-4 text-md">
+<div class="max-w-lg dark:text-gray-500 space-y-4 text-md">
 
 Hello 👋 I'm {{ metadata.author.name }}, past denial, anger, and bargaining phases iOS developer. Nowadays, I'm dealing mostly with depression and acceptance :)
 
