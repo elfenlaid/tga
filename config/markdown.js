@@ -15,10 +15,10 @@ module.exports = eleventyConfig => {
   })
     .disable('code')
     .use(markdownItAnchor, {
-      permalink: true,
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after'
+      }),
       slugify: markdownSlugify,
-      permalinkBefore: false,
-      permalinkClass: "direct-link",
       permalinkSymbol: "#",
       level: [1, 2, 3, 4]
     })
