@@ -20,5 +20,9 @@
   "jsonfeed": {
     "path": "/feed/feed.json",
     "url": "https://thegoodalright.dev/feed/feed.json"
+  },
+  "iosfeed": {
+    "path": "/feed/ios.json",
+    "url": "https://thegoodalright.dev/feed/ios.json"
   }
 }

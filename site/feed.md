@@ -12,3 +12,10 @@ To subscribe to all {{ metadata.social.title }} articles via RSS, add the follow
 # JSONFeed
 {{ metadata.jsonfeed.path | url | absoluteUrl(metadata.url)}}
 ```
+
+Or if only want an iOS related posts:
+
+```bash
+# JSONFeed
+{{ metadata.iosfeed.path | url | absoluteUrl(metadata.url)}}
+```
