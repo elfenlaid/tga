@@ -1,17 +1,15 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './site/**/*.{njk,css,html,md}',
     './config/**/*.js',
   ],
-  darkMode: 'media',
   theme: {
     extend: {
       colors: {
         sky: colors.sky,
-        blueGray: colors.blueGray,
+        blueGray: colors.slate,
         orange: colors.orange
       },
 
