@@ -256,7 +256,7 @@ As you can see, Swift String Interpolation is a hilarious feature that might be 
 
 You may find a much more detailed explanation of [`ExpressibleByStringInterpolation` at NSHipster][NSHipster], which covers yet another [custom interpolation type example][NSHipster-example].
 
-Know more cases of `ExpressibleByStringInterpolation`? Don't hesitate to hit me up on [Twitter]({{ metadata.author.twitter }})!
+Know more cases of `ExpressibleByStringInterpolation`? Don't hesitate to hit me up on [Mastodon]({{ metadata.author.mastodon }})!
 
 You can make anything, till next time :)
 
