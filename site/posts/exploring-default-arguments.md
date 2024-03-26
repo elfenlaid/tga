@@ -7,9 +7,9 @@ tags:
   - iOS
 ---
 
-# Exploring Default Argument Values
-
 It's 2023 and I'm not sure that comparing Objective-C with Swift is still relevant, but I'll go with it anyway. Unlike Objective-C, Swift is blessed with a handy feature of default argument values. The feature is quite a life improvement and it feels awkward when a programming language does't support it.
+
+[[toc]]
 
 Nevertheless, there are times when default argument values can get in the way. Alas, in a rather mischievous manner. Changing a default argument value is a subtle enterprise. Especially so in libraries and frameworks, e.g. when you aren't the library's interface consumer and can't be sure how it's used.
 

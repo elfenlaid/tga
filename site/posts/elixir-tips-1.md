@@ -8,6 +8,8 @@ tags:
 During my dwelling in Elixir I've gathered quite a few nifty tips and tricks.
 I'm writing them down for a personal cookbook, but I hope it will help to spark interest in a platform. Here we go.
 
+[[toc]]
+
 ## Ecto Datetime Helpers
 
 Let's start with `Ecto`. Not so long ago, I've discovered
