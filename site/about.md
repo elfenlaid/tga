@@ -5,7 +5,7 @@ title: About
 
 <div class="max-w-lg dark:text-gray-500 space-y-4 text-md">
 
-    Hello 👋 I'm {{ metadata.author.name }}, past denial, anger, and bargaining phases iOS developer. Nowadays, I'm dealing mostly with depression, acceptance, and Elixir :)
+  Hello 👋 I'm {{ metadata.author.name }}, past denial, anger, and bargaining phases iOS developer. Nowadays, I'm dealing mostly with depression, acceptance, and, thankfully, with Elixir :)
 
   I write or plan to write about <a class="underline" href="{{ '/tags/iOS' | url }}">iOS</a>, <a class="underline" href="{{ '/tags/Elixir' | url }}">Elixir</a>, and <a class="underline" href="{{ '/tags/' | url }}">tech</a>.
 
