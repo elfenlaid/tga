@@ -11,6 +11,8 @@ In [Building API Clients with Req - Wojtek Mach | ElixirConf EU 2024](https://ww
 
 The post is a reminder to myself on how to define such dependencies, and discusses some of their nuances.
 
+[[toc]]
+
 ## How to define a dependency
 
 The following snippet demonstrates how to model time dependency in the codebase. Subsequent sections go over its details.
