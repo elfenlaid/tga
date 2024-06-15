@@ -9,7 +9,7 @@ tags:
 
 In [Building API Clients with Req - Wojtek Mach | ElixirConf EU 2024](https://www.youtube.com/watch?v=AexE5JKpNvA) talk, Wojtek shortly demonstrated how to test [Req](https://github.com/wojtekmach/req) clients using behaviours and dependency injection. I highly recommend the talk.
 
-The post is a reminder to myself on how to define such dependencies, and discusses some of their nuances.
+The post is a reminder to myself on how and why to define such dependencies.
 
 [[toc]]
 
