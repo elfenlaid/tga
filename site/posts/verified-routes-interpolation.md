@@ -1,7 +1,7 @@
 ---
 date: 2024-08-20
-title: Inside the Phoenix Verified Routes Sigil
-subtitle: Sneak peek under the hood of the Phoenix Verified Routes sigil, focusing on string interpolations.
+title: "Inside the Phoenix Verified Routes Sigil"
+subtitle: "Sneak peek under the hood of the Phoenix Verified Routes sigil, focusing on string interpolations."
 tags:
   - Elixir
   - Phoenix
@@ -63,6 +63,7 @@ It certainly lives up to its module name and verifies routes, but how exactly do
 
 How does string interpolation work in Elixir? Well, there's a straightforward way to find out by quoting a string containing an interpolation and inspecting the result:
 
+{% raw %}
 ```elixir
 quote do
   "/first/#{1234}/second"
@@ -80,6 +81,7 @@ end
 
 <<"/first", Kernel.to_string(1234), "/second">>
 ```
+{% endraw %}
 
 So, interpolations split strings into chunks, and these chunks are reassembled into a binary afterward. All  interpolated parts are cast to strings using `Kernel.to_string`.
 
@@ -110,6 +112,8 @@ params = %{page: 1, direction: "asc", search: "encode me"}
 
 Alas, it crashes. There's no output from the `dbg`, meaning that the sigil function didn't have a chance to run. The function should step in a bit earlier, before its arguments are "evaluated". That sounds like something a macro can do:
 
+{% raw %}
+
 ```elixir
 defmodule MySigils do
   defmacro sigil_m(string, _extra), do: dbg(string)
@@ -133,12 +137,15 @@ string #=> {:<<>>, [line: 2],
 # ** (Protocol.UndefinedError) protocol String.Chars not implemented for %{search: "encode me", page: 1, direction: "asc"} of type Map
 ```
 
+{% endraw %}
+
 Still crashing, but this time `dbg` has actually printed something. And this something is an AST of an interpolated binary. Similar to one from the [string interpolation](#string-interpolation) section.
 
 It appears that `Kernel.to_string` doesn't know how to turn maps into strings.
 
 Here's a wild idea, how about we swap `Kernel.to_string` with a function that can convert maps to strings, for example `Kernel.inspect`?
 
+{% raw %}
 ```elixir
 defmodule MySigils do
   defmacro sigil_m({:<<>>, meta, segments}, _extra) do
@@ -166,9 +173,11 @@ params = %{page: 1, direction: "asc", search: "encode me"}
 
 # "/posts?%{search: \"encode me\", page: 1, direction: \"asc\"}"
 ```
+{% endraw %}
 
 Yay! It's not the prettiest code to follow, but swapping `Kernel.to_string` with `Kernel.inspect` did the job. Let's see the result AST:
 
+{% raw %}
 ```elixir
 params = %{page: 1, direction: "asc", search: "encode me"}
 
@@ -188,6 +197,7 @@ Macro.expand_once(macro, __ENV__)
     ]}
  ]}
 ```
+{% endraw %}
 
 As you can see, somewhere in the midst of AST now there's `[Kernel, :inspect]` instead of `[Kernel, :to_string]`.
 
@@ -228,6 +238,7 @@ defp verify_segment(["/" <> _ = segment | rest], route, acc) do
 
 Here's what happens with path segments, in other words `/#{value}`:
 
+{% raw %}
 ```elixir
 defp verify_segment(
       [
@@ -247,6 +258,7 @@ end
 # with:
 #   {:"::", m1, [{{:., m2, [__MODULE__, :__encode_segment__]}, m3, [dynamic]}, bin]}
 ```
+{% endraw %}
 
 The function replaces `Kernel.to_string` with `__MODULE_.__encode_segment__`. Let's check it out:
 
@@ -262,6 +274,7 @@ Aha, so segments are encoded with `Phoenix.Param.to_param()`. `Phoenix.Param`'s 
 
 Circling back to query parameters interpolation. A very similar thing happens to them as well:
 
+{% raw %}
 ```elixir
 defp verify_query(
       [
@@ -280,6 +293,7 @@ end
 # with:
 #   {:"::", m1, [{{:., m2, [__MODULE__, :__encode_query__]}, m3, [arg]}
 ```
+{% endraw %}
 
 Instead of `Kernel.to_string`, query parameters are interpolated with `__MODULE_.__encode_query__`:
 
